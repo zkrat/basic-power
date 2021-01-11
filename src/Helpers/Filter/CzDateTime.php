@@ -4,7 +4,7 @@
 namespace zkrat\BasicPower\Helpers\Filter;
 
 
-use \DateTime;
+use Nette\Utils\DateTime;
 use zkrat\BasicPower\template\TemplateConstats;
 
 class CzDateTime

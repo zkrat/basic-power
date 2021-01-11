@@ -4,12 +4,11 @@
 namespace zkrat\BasicPower\Abstracts;
 
 
-use Helper\HelperString;
-use Nette\SmartObject;
+
+use zkrat\BasicPower\Helper\HelperString;
 
 abstract class DataRow
 {
-    use SmartObject;
 
     protected $parent;
 
