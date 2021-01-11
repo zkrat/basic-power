@@ -1,0 +1,16 @@
+{
+    "name": "zkrat/basic-power",
+    "description": "My features",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "zkrat",
+            "email": "hajek@zkrat.net"
+        }
+    ],
+    "require": {
+        "php": ">=7.1",
+        "nette/utils": "^3.2"
+        }
+}
