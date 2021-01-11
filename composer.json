@@ -9,6 +9,10 @@
             "email": "hajek@zkrat.net"
         }
     ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "classmap": ["src/"]
+    },
     "require": {
         "php": ">=7.1",
         "nette/utils": "^3.2"
