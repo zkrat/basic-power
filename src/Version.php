@@ -37,5 +37,15 @@ class Version{
         return $this->getVerison();
     }
 
+    /**
+     * @return bool
+     */
+    public function isDebug(): bool
+    {
+        return $this->debug;
+    }
+
+
+
 
 }
