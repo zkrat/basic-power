@@ -16,6 +16,9 @@ class EchoString
 
     }
 
+    public static function write(string $string) {
+        echo $string;
+    }
 
     public static function writeLn(string $string) {
         if (self::isCli())
@@ -24,4 +27,3 @@ class EchoString
             echo $string.'<br>';
     }
 }
-EchoString::writeLn('ahoj');
