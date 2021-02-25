@@ -55,6 +55,12 @@ abstract class DataList  extends \stdClass implements \ArrayAccess, \Countable, 
         return $this->data[$key];
     }
 
+
+    public function rowsArray()
+    {
+        return array_values($this->data);
+    }
+
     /**
      * Offset to set
      * @link http://php.net/manual/en/arrayaccess.offsetset.php
