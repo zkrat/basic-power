@@ -11,6 +11,8 @@ abstract class DataList  extends \stdClass implements \ArrayAccess, \Countable, 
 
     protected $data=array();
 
+    protected $fullCount;
+
 
     /**
      * Retrieve an external iterator
@@ -53,6 +55,12 @@ abstract class DataList  extends \stdClass implements \ArrayAccess, \Countable, 
     public function offsetGet($key)
     {
         return $this->data[$key];
+    }
+
+
+    public function rowsArray()
+    {
+        return array_values($this->data);
     }
 
     /**
@@ -128,6 +136,24 @@ abstract class DataList  extends \stdClass implements \ArrayAccess, \Countable, 
     public function revert(){
         $this->data=array_reverse($this->data,TRUE);
     }
+
+    /**
+     * @return mixed
+     */
+    public function getFullCount()
+    {
+        return $this->fullCount;
+    }
+
+    /**
+     * @param mixed $fullCount
+     */
+    public function setFullCount($fullCount): void
+    {
+        $this->fullCount = $fullCount;
+    }
+
+
 
 
     public function isEmpty(  ) {
