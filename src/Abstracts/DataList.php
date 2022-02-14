@@ -38,9 +38,10 @@ abstract class DataList  extends \stdClass implements \ArrayAccess, \Countable, 
      * The return value will be casted to boolean if non-boolean was returned.
      * @since 5.0.0
      */
-    public function offsetExists($key)
+
+    public function offsetExists(mixed $offset): bool
     {
-        return isset($this->data[$key]);
+        return isset($this->data[$offset]);
     }
 
     /**
