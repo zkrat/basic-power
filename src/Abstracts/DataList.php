@@ -21,7 +21,7 @@ abstract class DataList  extends \stdClass implements \ArrayAccess, \Countable, 
      * <b>Traversable</b>
      * @since 5.0.0
      */
-    public function getIterator()
+    public function getIterator(): \Traversable
     {
         return new \RecursiveArrayIterator($this->data);
     }
@@ -53,9 +53,9 @@ abstract class DataList  extends \stdClass implements \ArrayAccess, \Countable, 
      * @return mixed Can return all value types.
      * @since 5.0.0
      */
-    public function offsetGet($key)
+    public function offsetGet(mixed $offset): mixed
     {
-        return $this->data[$key];
+        return $this->data[$offset];
     }
 
 
@@ -76,12 +76,12 @@ abstract class DataList  extends \stdClass implements \ArrayAccess, \Countable, 
      * @return void
      * @since 5.0.0
      */
-    public function offsetSet($key, $value)
+    public function offsetSet(mixed $offset, mixed $value): void
     {
-        if (!is_scalar($key)) { // prevents NULL
-            throw new DataCollectionException(sprintf('Key must be either a string or an integer, %s given.', gettype($key)),DataCollectionException::KEY_IS_NOT_SCALAR);
+        if (!is_scalar($offset)) { // prevents NULL
+            throw new DataCollectionException(sprintf('Key must be either a string or an integer, %s given.', gettype($offset)),DataCollectionException::KEY_IS_NOT_SCALAR);
         }
-        $this->data[$key] = $value;
+        $this->data[$offset] = $value;
     }
 
     /**
@@ -93,9 +93,9 @@ abstract class DataList  extends \stdClass implements \ArrayAccess, \Countable, 
      * @return void
      * @since 5.0.0
      */
-    public function offsetUnset($key)
+    public function offsetUnset(mixed $offset): void
     {
-        unset($this->data[$key]);
+        unset($this->data[$offset]);
     }
 
     /**
